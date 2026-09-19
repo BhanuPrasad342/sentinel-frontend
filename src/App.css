@@ -1,0 +1,375 @@
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+/* =========================================
+   ALERTS PAGE
+========================================= */
+
+.alert-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 35px;
+}
+
+.alert-filter-card {
+  padding: 20px;
+  background: #0a1a2b;
+  border: 1px solid #20384e;
+  border-radius: 9px;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.alert-filter-card:hover {
+  border-color: #31536d;
+  transform: translateY(-1px);
+}
+
+.alert-filter-card.selected {
+  border-color: #2999e8;
+  background: #0c2135;
+}
+
+.alert-filter-card span {
+  display: block;
+  color: #71869a;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.alert-filter-card strong {
+  display: block;
+  margin-top: 14px;
+  font-size: 30px;
+}
+
+.alert-filter-card small {
+  display: block;
+  margin-top: 5px;
+  color: #657b8e;
+  font-size: 10px;
+}
+
+.alerts-page-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.alert-detail-card {
+  padding: 20px;
+  background: #0a1a2b;
+  border: 1px solid #20384e;
+  border-radius: 9px;
+  transition: 0.2s ease;
+}
+
+.alert-detail-card:hover {
+  border-color: #31536d;
+  background: #0c1f31;
+}
+
+.alert-detail-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #172d40;
+}
+
+.alert-detail-top > div {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.alert-id {
+  color: #60778b;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.alert-detail-content {
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.alert-detail-main {
+  flex: 1;
+}
+
+.alert-detail-main h3 {
+  font-size: 15px;
+  color: #d7e2ea;
+}
+
+.alert-detail-main p {
+  margin-top: 8px;
+  color: #71869a;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.alert-score-display {
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.alert-score-display > span {
+  display: block;
+  color: #60778b;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.alert-score-display strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 26px;
+}
+
+.score-bar.large {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.alert-detail-footer {
+  padding-top: 15px;
+  border-top: 1px solid #172d40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.alert-meta {
+  display: flex;
+  gap: 20px;
+  color: #657b8e;
+  font-size: 9px;
+}
+
+@media (max-width: 900px) {
+
+  .alert-filter-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .alert-detail-content {
+    display: block;
+  }
+
+  .alert-score-display {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .alert-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .alert-detail-footer {
+    display: block;
+  }
+
+  .alert-meta {
+    margin-bottom: 15px;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .action-cell {
+    flex-wrap: wrap;
+  }
+}
