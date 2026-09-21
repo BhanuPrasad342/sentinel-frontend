@@ -30,7 +30,7 @@ function Settings() {
             const credentials = btoa(`${username}:${password}`);
 
             const response = await fetch(
-                "http://localhost:8081/api/alerts",
+                `${import.meta.env.VITE_API_URL}/api/alerts`,
                 {
                     headers: {
                         Authorization: `Basic ${credentials}`

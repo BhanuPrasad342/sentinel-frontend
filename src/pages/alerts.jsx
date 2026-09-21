@@ -32,7 +32,7 @@ function Alerts() {
             setLoading(true);
 
             const response = await fetch(
-                "http://localhost:8081/api/alerts",
+                `${import.meta.env.VITE_API_URL}/api/alerts`,
                 {
                     headers: {
                         Authorization: getBasicAuth()
@@ -65,7 +65,7 @@ function Alerts() {
     const updateAlertStatus = async (alertId, status) => {
         try {
             const response = await fetch(
-                `http://localhost:8081/api/alerts/${alertId}/status?status=${status}`,
+                `${import.meta.env.VITE_API_URL}/api/alerts/${alertId}/status?status=${status}`,
                 {
                     method: "PUT",
                     headers: {

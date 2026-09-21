@@ -13,7 +13,7 @@ export function connectAlertWebSocket(
     const client = new Client({
 
         brokerURL:
-            "ws://localhost:8081/ws",
+            import.meta.env.VITE_WS_URL,
 
         reconnectDelay: 5000,
 

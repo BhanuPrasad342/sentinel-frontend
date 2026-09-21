@@ -48,7 +48,7 @@ function Dashboard() {
 
             const response =
                 await fetch(
-                    "http://localhost:8081/api/alerts",
+                    `${import.meta.env.VITE_API_URL}/api/alerts`,
                     {
                         headers: {
                             Authorization:
@@ -103,7 +103,7 @@ function Dashboard() {
 
                 const response =
                     await fetch(
-                        `http://localhost:8081/api/alerts/${alertId}/status?status=${status}`,
+                        `${import.meta.env.VITE_API_URL}/api/alerts/${alertId}/status?status=${status}`,
                         {
                             method: "PUT",
 
